@@ -23,17 +23,14 @@
     }
 
     .contenedor-principal {
-      max-width: 600px; 
+      max-width: 100%; 
       margin: 0 auto;
       padding: 18px;  
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      align-items: center;
       padding-top: 25px;
       z-index: 10;
-      max-width: 100%;
-      margin: 0 auto;
       padding: 0 30px;
     }
 
@@ -51,61 +48,28 @@
       line-height: 1.6;
       max-width: 500px;
     }
-    .contenedor-marco1 {
+
+    /* Agrupamos las clases de los contenedores */
+    .contenedor-marco {
       background-color: white;
       border-radius: 25px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       padding: 40px 20px 20px 20px; 
-      width: 90%;
-      max-width: 500px;
+      width: 100%; /* Dejar que ocupe todo el ancho disponible */
+      max-width: 600px; /* Ajustar el máximo a un valor más grande */
       text-align: left;
       z-index: 10;
       margin-bottom: 10px;
       overflow: hidden;
     }
-     .contenedor-marco2 {
-      background-color: white;
-      border-radius: 25px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      padding: 40px 20px 20px 20px; 
-      width: 90%;
-      max-width: 500px;
-      text-align: left;
-      z-index: 10;
-      margin-bottom: 10px;
-      overflow: hidden;
-    }
-     .contenedor-marco3 {
-      background-color: white;
-      border-radius: 25px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      padding: 40px 20px 20px 20px; 
-      width: 90%;
-      max-width: 500px;
-      text-align: left;
-      z-index: 10;
-      margin-bottom: 10px;
-      overflow: hidden;
-    }
-     .contenedor-marco4 {
-      background-color: white;
-      border-radius: 25px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      padding: 40px 20px 20px 20px; 
-      width: 90%;
-      max-width: 500px;
-      text-align: left;
-      z-index: 10;
-      margin-bottom: 10px;
-      overflow: hidden;
-    }
-    }
+
     .formulario h2 {
       color: #007837;
       font-size: 18px;
       margin-bottom: 10px;
       text-align: left;
     }
+    
     label {
       display: block;
       font-weight: bold;
@@ -114,6 +78,7 @@
       color: #333;
       font-size: 14px;
     }
+
     .campo {
       background-color: #eeeeee;
       padding: 12px 15px;
@@ -124,21 +89,23 @@
       line-height: 1.4;
       font-size: 14px;
     }
+
     .fila-datos {
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
       gap: 10px;
-      flex: 1 1 48%
+      flex: 1 1 48%;
     }
+
     .grupo-dato {
       flex: 1;
       min-width: 100px;
       margin-bottom: 10px;
-      flex: 1 1 48%
       width: 100%;
       box-sizing: border-box;
     }
+
     .grupo-dato label {
       font-weight: bold;
       font-size: 14px;
@@ -146,7 +113,8 @@
       margin-bottom: 2px;
       color: #000;
     }
-    .boton-confirmar {
+
+    .boton-confirmar, .boton-whatsapp {
       display: block;
       width: 100%;
       background-color: #787E87;
@@ -160,117 +128,94 @@
       transition: background-color 0.3s;
       box-sizing: border-box;
     }
-    .boton-confirmar:hover {
-      background-color: #787E87;
-    }
-    .boton-whatsapp {
-      display: block;
-      width: 100%;
-      background-color: #787E87;
-      color: white;
-      padding: 15px;
-      border-radius: 15px;
-      font-size: 18px;
-      text-align: center;
-      text-decoration: none;
-      margin-top: 10px;
-      transition: background-color 0.3s;
-      box-sizing: border-box;
-    }
-    .boton-whatsapp:hover {
+
+    .boton-confirmar:hover, .boton-whatsapp:hover {
       background-color: #787E87;
     }
 
-/* Responsive para que se adapte a cualquier pantalla */
-@media (max-width: 600px) {
-  .contenedor-principal {
-    padding: 0 20px; /* margen lateral reducido pero visible */
-  }
-  .contenedor-marco {
-    padding: 20px;
-  }
-  .contenedor-marco2 {
-    padding: 20px;
-  }
-  .formulario h2 {
-    font-size: 18px;
-  }
-  label, .campo, .campo2 {
-    font-size: 13px;
-  }
-  .logo img {
-    width: 140px;
-  }
-}
-</style>
+    /* Responsive para que se adapte a cualquier pantalla */
+    @media (max-width: 600px) {
+      .contenedor-principal {
+        padding: 0 20px; /* margen lateral reducido pero visible */
+      }
+      .contenedor-marco {
+        padding: 20px;
+      }
+      .formulario h2 {
+        font-size: 18px;
+      }
+      label, .campo, .campo2 {
+        font-size: 13px;
+      }
+      .logo img {
+        width: 140px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="contenedor-principal">
-   <br>
-    <div class="contenedor-marco1">
+    <br>
+    <div class="contenedor-marco">
       <div class="formulario">
         <label>Razón Social:</label>
         <div class="campo">Cintandina S.A.</div>
         <label>NIT:</label>
         <div class="campo">890.321.924</div>
+        <label>Más información:</label>
+        <div class="campo"></div>
+      </div>
+    </div>    
+
+    <div class="contenedor-marco">
+      <div class="formulario">
+        <label>Razón Social:</label>
+        <div class="campo">Cintandina S.A.</div>
+        <div id="mas-informacion">
           <label>Más información:</label>
           <div class="campo"></div>
         </div>
       </div>
-      <br>
-    
-      <div class="contenedor-marco2">
-          <div class="formulario">
-            <label>Razón Social:</label>
-            <div class="campo">Cintandina S.A.</div>
-            <div id="mas-informacion">
-              <label>Más información:</label>
-              <div class="campo"></div>
-            </div>
-          </div>
-      </div> 
-      <div class="contenedor-marco3">
-          <div class="formulario">
-            <label>Razón Social:</label>
-            <div class="campo">Cintandina S.A.</div>
-            <div id="mas-informacion">
-              <label>Más información:</label>
-              <div class="campo"></div>
-            </div>
-          </div>
-          </div> 
-          <div class="contenedor-marco4">
-              <div class="formulario">
-                <label>Razón Social:</label>
-                <div class="campo">Cintandina S.A.</div>
-                <div id="mas-informacion">
-                  <label>Más información:</label>
-                  <div class="campo"></div>
-                </div>
-              </div>
-          </div>
+    </div> 
+
+    <div class="contenedor-marco">
+      <div class="formulario">
+        <label>Razón Social:</label>
+        <div class="campo">Cintandina S.A.</div>
+        <div id="mas-informacion">
+          <label>Más información:</label>
+          <div class="campo"></div>
+        </div>
+      </div>
+    </div> 
+
+    <div class="contenedor-marco">
+      <div class="formulario">
+        <label>Razón Social:</label>
+        <div class="campo">Cintandina S.A.</div>
+        <div id="mas-informacion">
+          <label>Más información:</label>
+          <div class="campo"></div>
+        </div>
+      </div>
     </div>
+
     <div style="width: 90%; max-width: 500px; margin: 0 auto 30px auto;">
       <a class="boton-confirmar" href="https://cathsanchez6.github.io/Formulario_Prueba_dos/" target="_blank">
         <i class="fas fa-box" style="margin-right: 10px;"></i> Confirmar entrega <i class="fas fa-hand-point-left" style="margin-left: 10px;"></i>
       </a>
-      
       <a class="boton-whatsapp" href="https://wa.me/+573103884630?text=Hola%2C%20necesito%20ayuda%20con%20un%20pedido%20que%20recib%C3%AD%20de%20Cintandina." target="_blank">
         <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Reportar incidente <i class="fas fa-hand-point-left" style="margin-left: 10px;"></i>
       </a>
     </div>
   </div>
   <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var masInfo = document.getElementById("mas-informacion");
-        var campo = masInfo.querySelector(".campo");
-    
-        // Revisamos si el contenido tiene espacios en blanco o esta totalmente vacio
-        if (!campo.textContent.trim()) {
-          masInfo.style.display = "none";
-        }
-      });
+    document.addEventListener("DOMContentLoaded", function() {
+      var masInfo = document.getElementById("mas-informacion");
+      var campo = masInfo.querySelector(".campo");
+      if (!campo.textContent.trim()) {
+        masInfo.style.display = "none";
+      }
+    });
   </script>
-
-</body>
-</html>
+</body
