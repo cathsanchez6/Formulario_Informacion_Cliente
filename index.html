@@ -160,6 +160,22 @@
     .boton-confirmar:hover, .boton-whatsapp:hover {
       background-color: #787E87;
     }
+    .campo-con-predeterminado {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+
+    .texto-predeterminado {
+      position: absolute;
+      top: 0;
+      left: 10px;
+      color: #888;
+      font-style: italic;
+      pointer-events: none; /* Para que no interfiera con la edición */
+      z-index: 1;
+    }
 
     /* Responsive para que se adapte a cualquier pantalla */
     @media (max-width: 600px) {
@@ -197,7 +213,10 @@
           </button>
           <div class="campo">Digita el código<input type="text" name="editar" required /></div>
         </div>
-        <div class="campo">Código de Solicitud</div>
+         <div class="campo-con-predeterminado">
+           <span class="texto-predeterminado">Código de Solicitud</span>
+           <textarea class="campo" placeholder="Escribe tu información aquí..."></textarea>
+         </div>
       </form>
     </div>    
     <div class="contenedor-marco">
