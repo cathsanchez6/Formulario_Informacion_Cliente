@@ -21,6 +21,17 @@
       position: relative;
       overflow-x: hidden;
     }
+    .contenedor principal{
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 20px;  
+      box-sizing: content-box;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      z-index: 10;
+      margin: 0 auto;
+    }
     .logo img {
       width: 200px;
       height: auto;
@@ -139,6 +150,7 @@
   </style>
 </head>
 <body>
+    <div class="contenedor-principal">
     <div class="contenedor-marco">
       <div class="formulario">
         <label>Razón Social:</label>
@@ -190,6 +202,7 @@
       <a class="boton-whatsapp" href="https://wa.me/+573103884630?text=Hola%2C%20necesito%20ayuda%20con%20un%20pedido%20que%20recib%C3%AD%20de%20Cintandina." target="_blank">
         <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Reportar incidente <i class="fas fa-hand-point-left" style="margin-left: 10px;"></i>
       </a>
+    </div>
     </div>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
