@@ -123,21 +123,27 @@
       transition: background-color 0.3s;
       box-sizing: border-box;      
     }
-      .boton-editar{
-        display: block;
-        width: auto;
-        background-color: #787E87;
-        color: white;
-        padding: 15px;
-        border-radius: 15px;
-        font-size: 13px;
-        text-align: center;
-        text-decoration: none;
-        margin-top: 10px;
-        transition: background-color 0.3s;
-        box-sizing: border-box;
+    .boton-editar{
+      display: block;
+      width: auto;
+      background-color: #787E87;
+      color: white;
+      padding: 15px;
+      border-radius: 15px;
+      font-size: 13px;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+      box-sizing: border-box;
     }
-
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
     .boton-confirmar, .boton-whatsapp {
       display: block;
       width: 100%;
@@ -188,8 +194,12 @@
       <div>
         <a class="boton-nuevo"> Crear nuevo código <i class="fas fa-hand-point-left" style="margin-left: 10px;"></i>
         </a>
-        <a class="boton-editar">Editar código existente <i class="fas fa-hand-point-left" style="margin-left: 10px;"></i>
-        </a>
+        <div class="header">
+          <a class="boton-editar">Editar código existente <i class="fas fa-hand-point-left" style="margin-left: 10px;"></i>
+          </a>
+          <div class="campo"></div>
+      </div>  
+        
       </div>
     </div>    
     <div class="contenedor-marco">
