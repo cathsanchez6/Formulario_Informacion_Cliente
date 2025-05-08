@@ -193,6 +193,27 @@
       padding: 6px 10px;
       max-width: 180px;
     }
+    
+    .boton-eliminar {
+        background-color: #FFFFFF;
+        color: #000000;
+        border: 2px solid #000000;
+        border-radius: 6px;
+        padding: 8px 12px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+      .boton-eliminar:hover {
+        background-color: #f0f0f0;
+      }
+      .icono-basura {
+        margin-left: 10px;
+      }
+
 
     /* Responsive para que se adapte a cualquier pantalla */
     @media (max-width: 600px) {
@@ -251,8 +272,9 @@
         <button type="button" style="background-color: #349800;">
             <i class="fa fa-cloud-upload" aria-hidden="true"></i>Cargar imagen
           </button>
-        <button type="button" style="background-color: #FFFFFF;" style="font-color: #000000" style="border-color: #000000">
-            <i class="fa fa-trash" aria-hidden="true"></i>Eliminar
+        
+        <button type="button" class="boton-estilizado">
+          <i class="fa fa-trash icono-basura" aria-hidden="true"></i>Eliminar
         </button>
       </div>
     </div>
