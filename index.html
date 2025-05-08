@@ -142,24 +142,6 @@
       gap: 10px;
       margin-bottom: 20px;
     }
-    .boton-confirmar, .boton-whatsapp {
-      display: block;
-      width: 100%;
-      background-color: #787E87;
-      color: white;
-      padding: 15px;
-      border-radius: 15px;
-      font-size: 18px;
-      text-align: center;
-      text-decoration: none;
-      margin-top: 10px;
-      transition: background-color 0.3s;
-      box-sizing: border-box;
-    }
-    
-    .boton-confirmar:hover, .boton-whatsapp:hover {
-      background-color: #787E87;
-    }
     .campo-con-predeterminado {
       position: relative;
       width: auto;
@@ -190,19 +172,27 @@
       padding: 6px 10px;
       max-width: 180px;
     }
-  .campo-buscador i {
-    color: #555;
-    margin-right: 8px;
-    font-size: 14px;
-  }
-  .campo-buscador input {
-    border: none;
-    background: transparent;
-    outline: none;
-    font-style: italic;
-    font-size: 13px;
-    width: 100%;
-  }
+    .campo-buscador i {
+      color: #555;
+      margin-right: 8px;
+      font-size: 14px;
+    }
+    .campo-buscador input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-style: italic;
+      font-size: 13px;
+      width: 100%;
+    }
+      .campo-logo {
+      display: flex;
+      align-items: right;
+      background-color: #eeeeee;
+      border-radius: 10px;
+      padding: 6px 10px;
+      max-width: 180px;
+    }
 
     /* Responsive para que se adapte a cualquier pantalla */
     @media (max-width: 600px) {
@@ -247,10 +237,14 @@
         <label style="margin-top: 15px;">Código de solicitud:</label>
         <div class="campo" id="codigoResultado" style="font-weight: bold; font-size: 16px;">CI10001</div>
       </form>
+      
 
     </div>
     <div class="contenedor-marco">
       <div class="formulario">
+        <div class="campo-logo">
+            <i class="fas users"></i>
+          </div>
         <label>Razón Social:</label>
         <div class="campo">Cintandina S.A.</div>
         <div id="mas-informacion">
@@ -280,15 +274,6 @@
           <div class="campo"></div>
         </div>
       </div>
-    </div>
-
-    <div style="width: 90%; max-width: 500px; margin: 0 auto 30px auto;">
-      <a class="boton-confirmar" href="https://cathsanchez6.github.io/Formulario_Prueba_dos/" target="_blank">
-        <i class="fas fa-box" style="margin-right: 10px;"></i> Confirmar entrega <i class="fas fa-hand-point-left" style="margin-left: 10px;"></i>
-      </a>
-      <a class="boton-whatsapp" href="https://wa.me/+573103884630?text=Hola%2C%20necesito%20ayuda%20con%20un%20pedido%20que%20recib%C3%AD%20de%20Cintandina." target="_blank">
-        <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Reportar incidente <i class="fas fa-hand-point-left" style="margin-left: 10px;"></i>
-      </a>
     </div>
     </div>
     <script>
