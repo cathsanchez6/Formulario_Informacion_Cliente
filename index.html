@@ -1,458 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crear Nueva Solicitud</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Formulario compacto</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
       margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background-size: cover;
-      background-repeat: no-repeat;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      overflow-x: hidden;
-    }
-    .contenedor-principal {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;  
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 20px;
-      z-index: 10;
-    }
-    .logo img {
-      width: 200px;
-      height: auto;
-      object-fit: cover;
     }
 
-    .texto-justificado {
-      text-align: center;
-      font-size: 14px;
-      color: #444;
-      padding: 0 20px;
-      line-height: 1.6;
-      max-width: 500px;
-    }
-    .contenedor-marco {
-      background-color: white;
-      border-radius: 25px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      padding: 20px; 
-      width: 100%; 
+    .container {
       max-width: 600px;
-      text-align: left;
-      z-index: 10;
-      margin-bottom: 10px;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
+      margin: auto;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .formulario {
-      padding: 26px;
-      border-radius: 12px;
-      max-width: 450px;
-      width: 100%;
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
     }
 
     label {
       display: block;
       font-weight: bold;
-      margin-top: 10px;
-      margin-bottom: 5px;
-      color: #333;
-      font-size: 14px;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
     }
 
-    .campo {
-      background-color: #eeeeee;
-      padding: 6px 10px;
-      border-radius: 10px;
-      color: #555;
-      margin-top: 5px;
-      font-style: italic;
-      font-size: 13px;
-      text-align: left;
-    }
-
-    input {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
       width: 100%;
-      background-color: transparent;
-      padding: 10px;
-      font-size: 13px;
-      border: none;
-      outline: none;
-      box-sizing: border-box;
+      padding: 8px;
+      font-size: 0.95rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
 
-    .fila-datos {
+    .form-row {
       display: flex;
-      flex-wrap: wrap;
+      align-items: flex-end;
       gap: 10px;
-      align-items: center;
-      margin-bottom: 10px;
     }
-    .grupo-dato {
+
+    .form-row .form-group {
       flex: 1;
-      min-width: 100px;
-      margin-bottom: 10px;
-      width: 100%;
-      box-sizing: border-box;
+      margin-bottom: 0;
     }
 
-    button {
-      color: white;
+    .delete-btn {
+      padding: 6px 10px;
+      font-size: 0.8rem;
+      background-color: #dc3545;
+      color: #fff;
       border: none;
+      border-radius: 4px;
       cursor: pointer;
-      border-radius: 6px;
-      margin: 10px 0;
-      font-size: 14px; 
-      padding: 8px 6px;
-      display: block;
-      width: auto;
-      min-width: 160px;
-    }
-    button:hover {
-      background-color: #787E87;
+      height: fit-content;
     }
 
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .campo-con-predeterminado {
-      position: relative;
-      width: auto;
-      max-width: 180px;
-      margin-bottom: 20px;
-      padding: 6px 10px;
-      border-radius: 10px;
-      margin-top: 5px;
-      font-style: italic;
-      font-size: 13px;
-      text-align: left;
+    .delete-btn:hover {
+      background-color: #c82333;
     }
 
-    .texto-predeterminado {
-      position: absolute;
-      top: 0;
-      left: 10px;
-      color: #888;
-      font-style: italic;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .campo-buscador {
-      display: flex;
-      align-items: center;
-      background-color: #eeeeee;
-      border-radius: 10px;
-      padding: 6px 10px;
-      max-width: 180px;
-    }
-    .campo-buscador i {
-      color: #555;
-      margin-right: 8px;
-      font-size: 14px;
-    }
-    .campo-buscador input {
-      border: none;
-      background: transparent;
-      outline: none;
-      font-style: italic;
-      font-size: 13px;
+    .submit-btn {
       width: 100%;
-    }
-    .campo-logo {
-      display: flex;
-      background-color: #eeeeee;
-      border-radius: 10px;
-      padding: 6px 10px;
-      max-width: 180px;
-    }
-    .campo-form {
-      display: flex;
-      align-items: center;
-      background-color: transparent;
-      border-radius: 10px;
-      max-width: 100px;
-    }
-
-    .boton-eliminar {
-      background-color: #FFFFFF;
-      color: #000000;
-      border: 2px solid #000000;
-      border-radius: 6px;
-      padding: 8px 12px;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-    }
-    .boton-eliminar:hover {
-      background-color: #f0f0f0;
-    }
-    .icono-basura {
-      margin-left: 10px;
-    }
-    .boton-circular {
-      background-color: #FFFFFF;
-      color: #000000;
-      border: 2px solid #000000;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      font-size: 18px;
-    }
-    .input-con-boton {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    .input-con-boton input {
-      flex: 1;
       padding: 10px;
-      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #28a745;
+      color: #fff;
       border: none;
-      background-color: #eee;
-    }
-    
-    .boton-circular {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: none;
-      background-color: #ff6666;
-      color: white;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border-radius: 6px;
       cursor: pointer;
-      flex-shrink: 0;
     }
-    .boton-agregar {
-      display: block;
-      width: 100%;
-      background-color: #787E87;
-      color: white;
-      padding: 15px;
-      border-radius: 15px;
-      font-size: 14px;
-      text-align: center;
-      text-decoration: none;
-      margin-top: 10px;
-      transition: background-color 0.3s;
-      box-sizing: border-box;
-    }
-    /* Responsive para que se adapte a cualquier pantalla */
-    @media (max-width: 600px) {
-      .contenedor-principal {
-        padding: 0 20px;
-      }
-      .contenedor-marco {
-        padding: 20px;
-      }
-      .formulario h2 {
-        font-size: 18px;
-      }
-      label, .campo {
-        font-size: 13px;
-      }
-      .logo img {
-        width: 140px;
-      }
+
+    .submit-btn:hover {
+      background-color: #218838;
     }
   </style>
 </head>
 <body>
-    <div class="contenedor-principal">
-      <br>
-    <div class= "contenedor-marco">
-      <form id="formulario">
-        <label style="font-weight: 700; font-size: 18px; display: block; margin-bottom: 10px;">Código de solicitud </label>
-          <button type="button" id="btnCrearCodigo" style="background-color: #00AAE4;">
-            <i class="fas fa-plus-circle" style="margin-right: 6px;"></i>Crear nuevo código
-          </button>
-          <div class="header">
-          <button type="button" style="background-color: #787E87;">
-            <i class="fas fa-pen" style="margin-right: 6px;"></i>Editar código existente
-          </button>          
-          <div class="campo-buscador">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Digita el código" />
-          </div>
-          </div>
-        
-        <label style="margin-top: 15px;">Código de solicitud:</label>
-        <div class="campo" id="codigoResultado" style="font-weight: bold; font-size: 16px;">CI10001</div>
-      </form>
+
+<div class="container">
+  <h2>Formulario de Entrega</h2>
+
+  <form id="deliveryForm">
+    <div class="form-group">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre">
     </div>
 
-
-
-      
-    <div class="contenedor-marco">
-      <div class="formulario">
-        <div class="header">
-          <div class="campo-logo">
-              <i class="fas fa-users"></i>
-          </div>
-          <label>Logo de la empresa</label>
-        </div>
-        <label style="font-size: 12px; display: block; margin-bottom: 10px; font-color:#787E87;">JPG o PNG. Tamaño máximo 4MG </label>
-        <div class="header">
-            <button type="button" style="background-color: #349800;"><i class="fa fa-cloud-upload" aria-hidden="true"></i>Cargar imagen
-            </button>
-            <button type="button" class="boton-estilizado"><i class="fa fa-trash" aria-hidden="true"></i>Eliminar
-            </button>
-        </div>
-        <hr>
-        <label> Archivo cargado</label>
-        <div class="campo"><i class="fa fa-trash" style="margin-left: 10px;"></i>
-          <i class="fa fa-eye"  style="margin-left: 10px;"></i>
-          <i class="fa fa-download" style="margin-left: 10px;"></i>
-        </div>
-      </div>
+    <div class="form-group">
+      <label for="correo">Correo electrónico</label>
+      <input type="email" id="correo" name="correo">
     </div>
 
+    <div class="form-group">
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono">
+    </div>
 
-       
+    <div class="form-group">
+      <label for="ciudad1">Ciudad 1</label>
+      <input type="text" id="ciudad1" name="ciudad1">
+    </div>
 
-    <div class="contenedor-marco">
-      <div class="formulario">
-        <h2>Información interna</h2>
-        <label>Cantidad de cajas solicitadas</label>
-        <div class="campo">4</div>        
-        <div style="display: flex; gap: 10px; margin-top: 10px;">
-          <div style="flex: 1; background-color: #eeeeee; border-radius: 10px; padding: 10px;">
-            <div style="font-size: 12px; color: #888;">Cantidad de rollos</div>
-            <div style="font-weight: bold; font-size: 18px;">120</div>
-          </div>
-          <div style="flex: 1; background-color: #eeeeee; border-radius: 10px; padding: 10px;">
-            <div style="font-size: 12px; color: #888;">Cantidad de seriales</div>
-            <div style="font-weight: bold; font-size: 18px;">42840</div>
-          </div>
-        </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="ciudad2">Ciudad 2</label>
+        <input type="text" id="ciudad2" name="ciudad2">
       </div>
-      </div>
-    
+      <button type="button" class="delete-btn" onclick="eliminarCiudad()">Eliminar</button>
+    </div>
 
-
-
-      
-
-    <div class="contenedor-marco">
-      <div class="formulario">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-          <h2 style="margin: 0;">Información Landing Page</h2>
-        </div>
-        <label>Sobre nosotros</label>
-        <div class="campo">
-          <textarea name="sobre_nosotros" rows="4" style="width: 100%; border: none; background: transparent; font-style: italic;"></textarea>
-        </div>
-        <label>Razón social</label>
-        <div class="campo"><input type="text" name="razon_social" required /></div>
-        <label>NIT</label>
-        <div class="campo"><input type="text" name="nit" required /></div>
-        <div class="fila-datos">
-          <div class="grupo-dato">
-            <label>Dirección 1</label>
-            <div class="campo"><input type="text" name="direccion1" required /></div>
-          </div>
-          <div class="grupo-dato">
-            <label>Teléfono 1</label>
-            <div class="campo"><input type="tel" name="telefono1" required /></div>
-          </div>
-          <div class="grupo-dato">
-            <label>Ciudad 1</label>
-            <div class="campo"><input type="text" name="ciudad1" required /></div>
-          </div>
-        </div>
-        <div class="fila-datos">
-          <div class="grupo-dato">
-            <label>Dirección 2</label>
-            <div class="campo"><input type="text" name="direccion2" /></div>
-          </div>
-          <div class="grupo-dato">
-            <label>Teléfono 2</label>
-            <div class="campo"><input type="tel" name="telefono2" /></div>
-          </div>
-          <div class="grupo-dato">
-            <label>Ciudad 2</label>
-            <div class="input-con-boton">
-              <input type="text" name="ciudad2" />
-              <button type="button" class="boton-circular">
-                <i class="fa fa-times"></i>
-              </button>
-            </div>
-          </div>
-
-
-
-        </div>
-        <div style="width: 90%; max-width: 300px; margin: 0 auto 30px auto;">
-          <a class="boton-agregar" >
-            <i class="fas fa-plus-circle" style="margin-right: 6px;"></i> Agregar dirección
-          </a>
-        </div>
-      </div>
+    <button type="submit" class="submit-btn">Enviar</button>
+  </form>
 </div>
 
+<script>
+  function eliminarCiudad() {
+    document.getElementById("ciudad2").value = "";
+  }
+</script>
 
-
-</div>
-
-
-
-
-
-      
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var masInfo = document.getElementById("mas-informacion");
-        var campo = masInfo.querySelector(".campo");
-        if (!campo.textContent.trim()) {
-          masInfo.style.display = "none";
-        }
-      });
-    </script>
-    <script>
-    let ultimoCodigo = 10000;
-  
-    function generarCodigo() {
-      ultimoCodigo++;
-      const nuevoCodigo = `CI${ultimoCodigo}`;
-      document.getElementById("codigoResultado").textContent = nuevoCodigo;
-    }
-  
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("btnCrearCodigo").addEventListener("click", generarCodigo);
-    });
-  </script>
-
-</body
+</body>
+</html>
