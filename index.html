@@ -230,6 +230,20 @@
     .boton-circular:hover {
       background-color: #f0f0f0;
     }
+    .boton-agregar {
+      display: block;
+      width: 100%;
+      background-color: #787E87;
+      color: white;
+      padding: 15px;
+      border-radius: 15px;
+      font-size: 18px;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+      box-sizing: border-box;
+    }
     /* Responsive para que se adapte a cualquier pantalla */
     @media (max-width: 600px) {
       .contenedor-principal {
@@ -371,6 +385,11 @@
               </button>
             </div>
           </div>
+        </div>
+        <div style="width: 90%; max-width: 500px; margin: 0 auto 30px auto;">
+          <a class="boton-agregar" >
+            <i class="fas fa-plus-circle" style="margin-right: 6px;"></i> Agregar dirección
+          </a>
         </div>
       </div>
 </div>
