@@ -184,6 +184,27 @@
       pointer-events: none;
       z-index: 1;
     }
+    .campo-buscador {
+      display: flex;
+      align-items: center;
+      background-color: #eeeeee;
+      border-radius: 10px;
+      padding: 6px 10px;
+      max-width: 180px;
+    }
+  .campo-buscador i {
+    color: #555;
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  .campo-buscador input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-style: italic;
+    font-size: 13px;
+    width: 100%;
+  }
 
     /* Responsive para que se adapte a cualquier pantalla */
     @media (max-width: 600px) {
@@ -202,6 +223,7 @@
       .logo img {
         width: 140px;
       }
+      
     }
   </style>
 </head>
@@ -220,7 +242,7 @@
           <div class="header">
             <button type="button" style= "background-color: #787E87;">Editar código existente <i class="fas fa-hand-point-left" style="margin-left: 10px;"></i>
             </button>
-            <div class="campo-con-predeterminado"><i class="fas fa-search icono-lupa" style="margin-left: 10px;"></i><input type="text" class="campo" placeholder="Digita el código"/>
+            <div class="campo-buscador"><i class="fas fa-search"></i><input type="text" class="campo" placeholder="Digita el código" />
             </div>
           </div>
            <div class="campo">
