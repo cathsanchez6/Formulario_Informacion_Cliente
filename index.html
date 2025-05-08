@@ -313,53 +313,64 @@
       
 
     <div class="contenedor-marco">
-      <div class="formulario">
-        <h2>Información Landing Page</h2>
-        <label>Sobre nosotros</label>
-        <div class="campo"><input type="text" name="sobre_nosotros" required />
-        </div>
-        <label>Razón social</label>
-        <div class="campo"><input type="text" name="razon_social" required />
-        </div>
-        <label>Nit</label>
-        <div class="campo"><input type="text" name="nit" required />
-        </div>
-        <hr>
-        <div class="fila-datos">
-          <div class="grupo-dato">
-            <label>Dirección 1</label>
-            <div class="campo"><input type="text" name="direccion1" required />
-            </div>
-            <label>Teléfono 1 </label>
-            <div class="campo"><input type="tel" name="telefono1" required />
-            </div>
-            <label>Ciudad 1 </label>
-            <div class="campo"><input type="text" name="ciudad1" required />
-            </div>
-          </div>
-        </div>
-        <div class="fila-datos">
-          <div class="grupo-dato">
-            <label>Dirección 1</label>
-            <div class="campo"><input type="text" name="direccion1" required />
-            </div>
-            <label>Teléfono 1 </label>
-            <div class="campo"><input type="tel" name="telefono1" required />
-            </div>
-            <label>Ciudad 1 </label>
-            <div class="campo"><input type="text" name="ciudad1" required />
-            </div>
-          </div>
-        </div>
-        <div id="mas-informacion">
-          <label>Más información:</label>
-          <div class="campo"></div>
-        </div>
-    </div>
+  <div class="formulario">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+      <h2 style="margin: 0;">Información Landing Page</h2>
+      <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #ccc; color: #000; display: flex; align-items: center; justify-content: center; font-weight: bold;">4</div>
     </div>
 
-
+    <label>Sobre nosotros</label>
+    <div class="campo">
+      <textarea name="sobre_nosotros" rows="4" style="width: 100%; border: none; background: transparent; font-style: italic;"></textarea>
     </div>
+
+    <label>Razón social</label>
+    <div class="campo"><input type="text" name="razon_social" required /></div>
+
+    <label>NIT</label>
+    <div class="campo"><input type="text" name="nit" required /></div>
+
+    <div class="fila-datos">
+      <div class="grupo-dato">
+        <label>Dirección 1</label>
+        <div class="campo"><input type="text" name="direccion1" required /></div>
+      </div>
+      <div class="grupo-dato">
+        <label>Teléfono 1</label>
+        <div class="campo"><input type="tel" name="telefono1" required /></div>
+      </div>
+      <div class="grupo-dato">
+        <label>Ciudad 1</label>
+        <div class="campo"><input type="text" name="ciudad1" required /></div>
+      </div>
+    </div>
+
+    <div class="fila-datos">
+      <div class="grupo-dato">
+        <label>Dirección 2</label>
+        <div class="campo"><input type="text" name="direccion2" /></div>
+      </div>
+      <div class="grupo-dato">
+        <label>Teléfono 2</label>
+        <div class="campo"><input type="tel" name="telefono2" /></div>
+      </div>
+      <div class="grupo-dato">
+        <label>Ciudad 2</label>
+        <div class="campo"><input type="text" name="ciudad2" /></div>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+      <button type="button" class="boton-eliminar">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
 
 
 
