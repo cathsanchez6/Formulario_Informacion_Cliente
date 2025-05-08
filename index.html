@@ -227,9 +227,30 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       font-size: 18px;
     }
-    .boton-circular:hover {
-      background-color: #f0f0f0;
-    }
+    .input-con-boton {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .input-con-boton input {
+      flex: 1;
+    }
+    
+    .boton-circular {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      background-color: #ff6666;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
     .boton-agregar {
       display: block;
       width: 100%;
@@ -377,15 +398,16 @@
             <label>Teléfono 2</label>
             <div class="campo"><input type="tel" name="telefono2" /></div>
           </div>
-          <div class="grupo-dato"> 
+          <div class="grupo-dato">
             <label>Ciudad 2</label>
-            <div class="campo" style="display: flex; align-items: center; justify-content: space-between;">
-            <input type="text" name="ciudad2" style="flex: 1;" />
-            <button type="button" class="boton-circular" style="margin-left: 10px;">
-            <i class="fa fa-times" aria-hidden="true"></i>
-            </button>
+            <div class="input-con-boton">
+              <input type="text" name="ciudad2" />
+              <button type="button" class="boton-circular">
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
           </div>
-        </div>
+
 
         </div>
         <div style="width: 90%; max-width: 500px; margin: 0 auto 30px auto;">
