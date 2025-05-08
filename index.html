@@ -231,18 +231,25 @@
       <br>
     <div class= "contenedor-marco">
       <form id="formulario">
-        <label style="font-weight: 700; font-size: 18px; display: block; margin-bottom: 10px;">Código de solicitud <i class="fas fa-circle-info" style="color: #999; font-size: 14px; margin-left: 5px;"></i></label>
+        <label style="font-weight: 700; font-size: 18px; display: block; margin-bottom: 10px;">Código de solicitud </label>
         <div class="fila-datos">
-          <button type="button" style="background-color: #00AAE4;"><i class="fas fa-plus-circle" style="margin-right: 6px;"></i>Crear nuevo código</button>
-          <button type="button" style="background-color: #787E87;"><i class="fas fa-pen" style="margin-right: 6px;"></i>Editar código existente</button>
+          <button type="button" id="btnCrearCodigo" style="background-color: #00AAE4;">
+            <i class="fas fa-plus-circle" style="margin-right: 6px;"></i>Crear nuevo código
+          </button>
+          
+          <button type="button" style="background-color: #787E87;">
+            <i class="fas fa-pen" style="margin-right: 6px;"></i>Editar código existente
+          </button>
+          
           <div class="campo-buscador">
             <i class="fas fa-search"></i>
             <input type="text" placeholder="Digita el código" />
           </div>
         </div>
         <label style="margin-top: 15px;">Código de solicitud:</label>
-        <div class="campo" style="font-weight: bold; font-size: 16px; font-style: normal;">CI10001</div>
+        <div class="campo" id="codigoResultado" style="font-weight: bold; font-size: 16px;">CI10001</div>
       </form>
+
     </div>
     <div class="contenedor-marco">
       <div class="formulario">
@@ -286,13 +293,27 @@
       </a>
     </div>
     </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var masInfo = document.getElementById("mas-informacion");
-      var campo = masInfo.querySelector(".campo");
-      if (!campo.textContent.trim()) {
-        masInfo.style.display = "none";
-      }
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var masInfo = document.getElementById("mas-informacion");
+        var campo = masInfo.querySelector(".campo");
+        if (!campo.textContent.trim()) {
+          masInfo.style.display = "none";
+        }
+      });
+    </script>
+    <script>
+    let ultimoCodigo = 10000;
+  
+    function generarCodigo() {
+      ultimoCodigo++;
+      const nuevoCodigo = `CI${ultimoCodigo}`;
+      document.getElementById("codigoResultado").textContent = nuevoCodigo;
+    }
+  
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("btnCrearCodigo").addEventListener("click", generarCodigo);
     });
   </script>
+
 </body
