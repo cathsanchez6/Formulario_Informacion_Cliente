@@ -2,460 +2,138 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crear Nueva Solicitud</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Direcciones</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    /* Estilos generales */
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background-size: cover;
-      background-repeat: no-repeat;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
     }
 
-    .contenedor-principal {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 20px;
-      z-index: 10;
-    }
-
-    .logo img {
-      width: 200px;
-      height: auto;
-      object-fit: cover;
-    }
-
-    .texto-justificado {
-      text-align: center;
-      font-size: 14px;
-      color: #444;
-      padding: 0 20px;
-      line-height: 1.6;
-      max-width: 500px;
-    }
-
-    /* Contenedores */
     .contenedor-marco {
       background-color: white;
-      border-radius: 25px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border: 1px solid #ccc;
+      border-radius: 8px;
       padding: 20px;
-      width: 100%;
-      max-width: 600px;
-      text-align: left;
-      z-index: 10;
-      margin-bottom: 10px;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
+      margin: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .contenedor {
-      background: white;
-      max-width: 100%;
-      margin: auto;
+      max-width: 700px;
+      margin: 0 auto;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .contenedor h2 {
-      text-align: center;
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-
-    /* Formularios */
-    .formulario {
-      padding: 26px;
-      border-radius: 12px;
-      max-width: 450px;
-      width: 100%;
+    .form-row {
+      margin-bottom: 15px;
     }
 
     label {
       display: block;
       font-weight: bold;
-      margin-top: 10px;
       margin-bottom: 5px;
-      color: #333;
-      font-size: 14px;
     }
 
-    input, textarea {
+    input[type="text"],
+    input[type="email"] {
       width: 100%;
       padding: 8px;
-      font-size: 0.9rem;
       border: 1px solid #ccc;
-      border-radius: 6px;
-      box-sizing: border-box;
-    }
-
-    textarea {
-      resize: none;
-      height: 70px;
-    }
-
-    .form-group {
-      margin-bottom: 12px;
-    }
-
-    .form-row {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .form-row input {
-      flex: 1;
-    }
-
-    .form-row .remove-btn {
-      background-color: #f2f2f2;
-      border: none;
-      font-size: 20px;
-      color: #888;
-      cursor: pointer;
-      padding: 0 8px;
-      border-radius: 50%;
-      height: 36px;
-      width: 36px;
-      align-self: flex-end;
-    }
-
-    /* Campos */
-    .campo {
-      background-color: #eeeeee;
-      padding: 6px 10px;
-      border-radius: 10px;
-      color: #555;
-      margin-top: 5px;
-      font-style: italic;
-      font-size: 13px;
-      text-align: left;
+      border-radius: 4px;
+      font-size: 14px;
     }
 
     .campo-buscador {
-      display: flex;
-      align-items: center;
-      background-color: #eeeeee;
-      border-radius: 10px;
-      padding: 6px 10px;
-      max-width: 180px;
-    }
-
-    .campo-buscador i {
-      color: #555;
-      margin-right: 8px;
-      font-size: 14px;
+      position: relative;
+      margin-bottom: 15px;
     }
 
     .campo-buscador input {
-      border: none;
-      background: transparent;
-      outline: none;
-      font-style: italic;
-      font-size: 13px;
       width: 100%;
+      padding: 8px 30px 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
 
-    .campo-logo {
-      display: flex;
-      background-color: #eeeeee;
-      border-radius: 10px;
-      padding: 6px 10px;
-      max-width: 180px;
-    }
-
-    /* Botones */
-    button {
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 6px;
-      margin: 10px 0;
-      font-size: 14px;
-      padding: 8px 6px;
-      display: block;
-      width: auto;
-      min-width: 160px;
-    }
-
-    button:hover {
-      background-color: #787E87;
-    }
-
-    .boton-eliminar {
-      background-color: #FFFFFF;
-      color: #000000;
-      border: 2px solid #000000;
-      border-radius: 6px;
-      padding: 8px 12px;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-    }
-
-    .boton-eliminar:hover {
-      background-color: #f0f0f0;
-    }
-
-    .icono-basura {
-      margin-left: 10px;
-    }
-
-    .boton-circular {
-      background-color: #FFFFFF;
-      color: #000000;
-      border: 2px solid #000000;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      font-size: 18px;
-    }
-
-    .boton-circular:hover {
-      background-color: #f0f0f0;
+    .campo-buscador i {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
     }
 
     .boton-agregar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #666c7a;
+      background-color: #007bff;
       color: white;
-      padding: 10px;
-      font-size: 0.95rem;
+      padding: 10px 15px;
       border: none;
-      border-radius: 6px;
+      border-radius: 4px;
       cursor: pointer;
-      width: 100%;
-      margin-top: 10px;
-    }
-
-    .boton-agregar::before {
-      content: "+";
-      margin-right: 6px;
-    }
-
-    /* Encabezados */
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    /* Indicadores */
-    .step-indicator {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #ccc;
-      border-radius: 50%;
-      width: 28px;
-      height: 28px;
-      text-align: center;
-      line-height: 28px;
       font-size: 14px;
-      font-weight: bold;
-      color: #333;
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      .contenedor-principal {
-        padding: 0 20px;
-      }
-
-      .contenedor-marco {
-        padding: 20px;
-      }
-
-      .formulario h2 {
-        font-size: 18px;
-      }
-
-      label, .campo {
-        font-size: 13px;
-      }
-
-      .logo img {
-        width: 140px;
-      }
+    .boton-agregar:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
-  <div class="contenedor-principal">
-      <br>
-    <div class="contenedor-marco1">
-      <div class="contenedor">
-        <label style="font-weight: 700; font-size: 18px; display: block; margin-bottom: 10px;">Código de solicitud </label>
-          <button type="button" id="btnCrearCodigo" style="background-color: #00AAE4;">
-            <i class="fas fa-plus-circle" style="margin-right: 6px;"></i>Crear nuevo código
-          </button>
-          <div class="header">
-          <button type="button" style="background-color: #787E87;">
-            <i class="fas fa-pen" style="margin-right: 6px;"></i>Editar código existente
-          </button> 
-            <div class="form-row">
-            <i class="fas fa-search"></i><input type="text" placeholder="Digita el código">
-          </div>
-          </div>
-        
-        <label style="margin-top: 15px;">Código de solicitud:</label>
-        <div class="campo" id="codigoResultado" style="font-weight: bold; font-size: 16px;">CI10001</div>
-      </div>
-    </div>
-
-
-
-      
-    <div class="contenedor-marco1">
-      <div class="contenedor">
-        <div class="header">
-          <div class="campo-logo">
-              <i class="fas fa-users"></i>
-          </div>
-          <label>Logo de la empresa</label>
-        </div>
-        <label style="font-size: 12px; display: block; margin-bottom: 10px; font-color:#787E87;">JPG o PNG. Tamaño máximo 4MG </label>
-        <div class="header">
-            <button type="button" style="background-color: #349800;"><i class="fa fa-cloud-upload" aria-hidden="true"></i>Cargar imagen
-            </button>
-            <button type="button" class="boton-estilizado"><i class="fa fa-trash" aria-hidden="true"></i>Eliminar
-            </button>
-        </div>
-        <hr>
-        <label> Archivo cargado</label>
-        <div class="campo"><i class="fa fa-trash" style="margin-left: 10px;"></i>
-          <i class="fa fa-eye"  style="margin-left: 10px;"></i>
-          <i class="fa fa-download" style="margin-left: 10px;"></i>
-        </div>
-      </div>
-    </div>
-
-
-       
-
-    <div class="contenedor-marco1">
-      <div class="contenedor">
-        <h2>Información interna</h2>
-        <label>Cantidad de cajas solicitadas</label>
-        <div class="campo">4</div>        
-        <div style="display: flex; gap: 10px; margin-top: 10px;">
-          <div style="flex: 1; background-color: #eeeeee; border-radius: 10px; padding: 10px;">
-            <div style="font-size: 12px; color: #888;">Cantidad de rollos</div>
-            <div style="font-weight: bold; font-size: 18px;">120</div>
-          </div>
-          <div style="flex: 1; background-color: #eeeeee; border-radius: 10px; padding: 10px;">
-            <div style="font-size: 12px; color: #888;">Cantidad de seriales</div>
-            <div style="font-weight: bold; font-size: 18px;">42840</div>
-          </div>
-        </div>
-      </div>
-      </div>
-    
-
-
-
-      
-
-   <div class="contenedor-marco1">
   <div class="contenedor">
-    <h2>Información Landing Page</h2>
-
-    <div class="form-group">
-      <label for="sobre">Sobre nosotros</label>
-      <textarea id="sobre"></textarea>
+    <!-- Buscar código -->
+    <div class="contenedor-marco">
+      <div class="campo-buscador">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Digita el código" />
+      </div>
     </div>
 
-    <div class="form-group">
-      <label for="razon">Razón social</label>
-      <input type="text" id="razon">
+    <!-- Razon social -->
+    <div class="contenedor-marco">
+      <div class="form-row">
+        <label for="razon">Razón social</label>
+        <input type="text" id="razon" />
+      </div>
     </div>
 
-    <div class="form-group">
-      <label for="nit">NIT</label>
-      <input type="text" id="nit">
+    <!-- Correo -->
+    <div class="contenedor-marco">
+      <div class="form-row">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" />
+      </div>
     </div>
 
-    <div class="form-row">
-      <input type="text" placeholder="Dirección 1">
-      <input type="text" placeholder="Teléfono 1">
-      <input type="text" placeholder="Ciudad 1">
+    <!-- Página web -->
+    <div class="contenedor-marco">
+      <div class="form-row">
+        <label for="pagina">Página web</label>
+        <input type="text" id="pagina" />
+      </div>
     </div>
 
-    <div class="form-row">
-      <input type="text" placeholder="Dirección 2">
-      <input type="text" placeholder="Teléfono 2">
-      <input type="text" placeholder="Ciudad 2">
-      <button class="remove-btn" onclick="removeRow(this)">×</button>
+    <!-- Link del canal -->
+    <div class="contenedor-marco">
+      <div class="form-row">
+        <label for="link">Link del canal</label>
+        <input type="text" id="link" />
+      </div>
     </div>
 
-    <button class="add-btn">Agregar dirección</button>
-    <hr>
-    <div class="form-group">
-      <label for="correo">Correo Electrónico</label>
-      <input type="text" id="razon">
+    <!-- Agregar dirección -->
+    <div class="contenedor-marco">
+      <label style="font-size: 12px; display: block; margin-bottom: 10px; color:#787E87;">
+        Agrega una dirección si deseas que aparezca en el perfil público
+      </label>
+      <button class="boton-agregar">Agregar dirección</button>
     </div>
-    <div class="form-group">
-      <label for="pagina">Página web</label>
-      <input type="text" id="razon">
-    </div>
-    <div class="form-group">
-      <label for="link">Link adicional</label>
-      <input type="text" id="razon">
-    </div>
-    <button type="button" id="btnCrearCodigo" style="background-color: #00AAE4;">Crear Solicitud</button>
+
+    <!-- Espacio inferior para respiración visual -->
+    <div style="height: 60px;"></div>
   </div>
-     
-</div>
-
-<script>
-  function removeRow(button) {
-    const row = button.parentElement;
-    row.remove();
-  }
-</script>
-    <script>
-    let ultimoCodigo = 10000;
-  
-    function generarCodigo() {
-      ultimoCodigo++;
-      const nuevoCodigo = CI${ultimoCodigo};
-      document.getElementById("codigoResultado").textContent = nuevoCodigo;
-    }
-  
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("btnCrearCodigo").addEventListener("click", generarCodigo);
-    });
-  </script>
 </body>
 </html>
+
